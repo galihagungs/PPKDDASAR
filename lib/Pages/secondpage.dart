@@ -7,90 +7,56 @@ class Secondpage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-      ),
+      appBar: AppBar(title: Text(title)),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text("Selamat Datang Dihalaman Pertama", style: TextStyle(
-                decoration: TextDecoration.underline,
-                fontSize: 20,
-                fontStyle: FontStyle.italic,
-                fontWeight: FontWeight.bold,
-                decorationStyle: TextDecorationStyle.dotted,
-              ),),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text("BIODATA", style: TextStyle(
-                fontSize: 20,
-                fontStyle: FontStyle.italic,
-                fontWeight: FontWeight.bold,
-              ),),
-            ],
-          ),
-          Padding(
-            padding: EdgeInsets.all(20),
-            child: Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  spacing: 15,
-                  children: [
-                      Text("Nama: ", style: TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                      Text("Galih Agung Sukmawan", style: TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  spacing: 15,
-                  children: [
-                      Text("Kelas: ", style: TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                      Text("Mobile Programing", style: TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  spacing: 15,
-                  children: [
-                      Text("Nomor Tlp: ", style: TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                      Text("081287268906", style: TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ],
-                ),
-              ],
+          Container(
+            height: 200,
+            width: 200,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              image: DecorationImage(
+                image: AssetImage("images/person.jpg"),
+                fit: BoxFit.cover,
+              ),
             ),
           ),
-          
+          CircleAvatar(
+            radius: 100,
+            backgroundImage: NetworkImage(
+              "https://static.wikia.nocookie.net/f1-formula-1/images/4/40/Ferrari.jpg/revision/latest?cb=20230118203655",
+            ),
+          ),
+          Text("SF90", style: TextStyle(fontSize: 20)),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                "Selamat Datang Dihalaman Pertama",
+                style: TextStyle(
+                  decoration: TextDecoration.underline,
+                  fontSize: 20,
+                  fontStyle: FontStyle.italic,
+                  fontWeight: FontWeight.bold,
+                  decorationStyle: TextDecorationStyle.dotted,
+                ),
+              ),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                "BIODATA",
+                style: TextStyle(
+                  fontSize: 20,
+                  fontStyle: FontStyle.italic,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ],
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -104,51 +70,40 @@ class Secondpage extends StatelessWidget {
           ),
           SizedBox(height: 20),
           Text("Coba2"),
-
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text("Nama :", style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                    Text("Kelas :", style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                    Text("Nomor Telpon :", style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                    Text("Alamat :", style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ],
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text("Galih Agung Sukmawan"),
-                    Text("Mobile Programing"),
-                    Text("081287268906"),
-                    Text("Jakarta"),
-                  ],
-                ),
-              ],
-            ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  defaultText("Nama :"),
+                  defaultText("Kelas :"),
+                  defaultText("Nomor Telpon :"),
+                  defaultText("Alamat :"),
+                ],
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  defaultText("Galih Agung Sukmawan", font: FontWeight.w100),
+                  defaultText("Mobile Programing"),
+                  defaultText("081287268906"),
+                  defaultText("Jakarta"),
+                ],
+              ),
+            ],
           ),
-
         ],
+      ),
+    );
+  }
+
+  Text defaultText(String title, {FontWeight? font, double? sizeFont}) {
+    return Text(
+      title,
+      style: TextStyle(
+        fontSize: sizeFont ?? 15,
+        fontWeight: font ?? FontWeight.w500,
       ),
     );
   }
