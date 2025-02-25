@@ -1,3 +1,4 @@
+import 'package:first_app/Pages/grid.dart';
 import 'package:first_app/Pages/listviewbuilder.dart';
 import 'package:first_app/Pages/mainpage.dart';
 import 'package:first_app/Pages/secondpage.dart';
@@ -22,6 +23,7 @@ class _BottomnavState extends State<Bottomnav> {
     Mainpage(),
     TestViewBuilder(),
     Secondpage(),
+    GridPage(),
   ];
 
   void _onTap(int index) {
@@ -39,9 +41,11 @@ class _BottomnavState extends State<Bottomnav> {
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
           BottomNavigationBarItem(icon: Icon(Icons.car_rental), label: "Cars"),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
+          BottomNavigationBarItem(icon: Icon(Icons.grid_4x4), label: "Grid"),
         ],
         onTap: _onTap,
         selectedItemColor: Colors.blue,
+        unselectedItemColor: Colors.grey,
         currentIndex: _selected,
       ),
       body: Center(child: _widgetOption.elementAt(_selected)),
