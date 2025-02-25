@@ -1,5 +1,5 @@
+import 'package:first_app/Pages/bottomnav.dart';
 import 'package:first_app/Pages/fourpage.dart';
-import 'package:first_app/Pages/mainpage.dart';
 import 'package:first_app/Pages/secondpage.dart';
 import 'package:first_app/Pages/thirdpage.dart';
 import 'package:flutter/material.dart';
@@ -15,14 +15,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),
       routes: {
-        '/': (context) => const Mainpage(title: 'Flutter Demo Home Page'),
-        '/home': (context) => const Secondpage(title: 'Profile Menu'),
+        '/': (context) => const Bottomnav(),
+        '/home': (context) => const Secondpage(),
         '/thrid': (context) => const Thirdpage(),
         '/four': (context) => const Fourpage(),
       },
