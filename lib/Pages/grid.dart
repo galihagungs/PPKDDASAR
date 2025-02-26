@@ -34,9 +34,14 @@ class _GridPageState extends State<GridPage> {
               ],
             ),
             child: Center(
-              child: Text(
-                data.name,
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              child: Column(
+                children: [
+                  Text(
+                    data.name,
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                  Image.network(data.image, height: 20, width: 20),
+                ],
               ),
             ),
           );

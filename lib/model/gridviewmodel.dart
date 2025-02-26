@@ -21,6 +21,7 @@ class Gridmodel {
     return <String, dynamic>{
       'name': name,
       'image': image,
+      // ignore: deprecated_member_use
       'color': color.value,
     };
   }
