@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class Loginpages extends StatefulWidget {
-  const Loginpages({super.key});
+class LoginPages extends StatefulWidget {
+  const LoginPages({super.key});
 
   @override
-  State<Loginpages> createState() => _LoginpagesState();
+  State<LoginPages> createState() => _LoginPagesState();
 }
 
-class _LoginpagesState extends State<Loginpages> {
+class _LoginPagesState extends State<LoginPages> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -99,23 +99,44 @@ class _LoginpagesState extends State<Loginpages> {
                     style: TextStyle(fontSize: 12, color: Colors.grey),
                   ),
                   SizedBox(height: 40),
-                  TextButton(
-                    onPressed: () {},
-                    child: Container(
-                      height: 56,
-                      decoration: BoxDecoration(
-                        color: Colors.deepPurpleAccent,
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      child: Center(
-                        child: Text(
-                          "Login",
-                          style: TextStyle(fontSize: 14, color: Colors.white),
+                  // TextButton(
+                  //   onPressed: () {},
+                  //   child: Container(
+                  //     height: 56,
+                  //     decoration: BoxDecoration(
+                  //       color: Colors.deepPurpleAccent,
+                  //       borderRadius: BorderRadius.circular(8),
+                  //     ),
+                  //     child: Center(
+                  //       child: Text(
+                  //         "Login",
+                  //         style: TextStyle(fontSize: 14, color: Colors.white),
+                  //       ),
+                  //     ),
+                  //   ),
+                  // ),
+                  Center(
+                    child: TextButton(
+                      style: ButtonStyle(
+                        minimumSize: WidgetStateProperty.all(
+                          Size(MediaQuery.of(context).size.width, 56),
                         ),
+                        backgroundColor: WidgetStateProperty.all(
+                          Colors.deepPurpleAccent,
+                        ),
+                        shape: WidgetStateProperty.all(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(8)),
+                          ),
+                        ),
+                      ),
+                      onPressed: () {},
+                      child: Text(
+                        "Login",
+                        style: TextStyle(fontSize: 14, color: Colors.white),
                       ),
                     ),
                   ),
-
                   SizedBox(height: 32),
                   Center(
                     child: Text(
@@ -124,34 +145,56 @@ class _LoginpagesState extends State<Loginpages> {
                     ),
                   ),
                   SizedBox(height: 40),
+
                   Center(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Container(
-                          height: 48,
-                          width: 88,
-                          decoration: BoxDecoration(
-                            border: Border.all(width: 1, color: Colors.grey),
-                            borderRadius: BorderRadius.circular(8),
+                        ElevatedButton(
+                          onPressed: () {},
+                          style: ButtonStyle(
+                            backgroundColor: WidgetStatePropertyAll(
+                              Colors.white,
+                            ),
+
+                            minimumSize: WidgetStateProperty.all(Size(88, 48)),
+                            shape: WidgetStatePropertyAll(
+                              RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                            ),
                           ),
                           child: Image.asset("assets/images/google.png"),
                         ),
-                        Container(
-                          height: 48,
-                          width: 88,
-                          decoration: BoxDecoration(
-                            border: Border.all(width: 1, color: Colors.grey),
-                            borderRadius: BorderRadius.circular(8),
+                        ElevatedButton(
+                          onPressed: () {},
+                          style: ButtonStyle(
+                            backgroundColor: WidgetStatePropertyAll(
+                              Colors.white,
+                            ),
+
+                            minimumSize: WidgetStateProperty.all(Size(88, 48)),
+                            shape: WidgetStatePropertyAll(
+                              RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                            ),
                           ),
                           child: Image.asset("assets/images/apple.png"),
                         ),
-                        Container(
-                          height: 48,
-                          width: 88,
-                          decoration: BoxDecoration(
-                            border: Border.all(width: 1, color: Colors.grey),
-                            borderRadius: BorderRadius.circular(8),
+                        ElevatedButton(
+                          onPressed: () {},
+                          style: ButtonStyle(
+                            backgroundColor: WidgetStatePropertyAll(
+                              Colors.white,
+                            ),
+
+                            minimumSize: WidgetStateProperty.all(Size(88, 48)),
+                            shape: WidgetStatePropertyAll(
+                              RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                            ),
                           ),
                           child: Image.asset("assets/images/twitter.png"),
                         ),

@@ -1,7 +1,5 @@
 import 'package:first_app/Pages/LoginPages.dart';
-import 'package:first_app/Pages/bottomnav.dart';
 import 'package:first_app/Pages/fourpage.dart';
-import 'package:first_app/Pages/loginpage.dart';
 import 'package:first_app/Pages/secondpage.dart';
 import 'package:first_app/Pages/thirdpage.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +22,7 @@ class MyApp extends StatelessWidget {
       ),
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),
       routes: {
-        '/': (context) => const Loginpages(),
+        '/': (context) => const LoginPages(),
         '/home': (context) => const Secondpage(),
         '/thrid': (context) => const Thirdpage(),
         '/four': (context) => const Fourpage(),
